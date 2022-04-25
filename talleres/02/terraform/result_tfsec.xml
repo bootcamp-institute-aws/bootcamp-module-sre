@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tfsec" failures="23" tests="105">
+	<testcase classname="modules/ecr/main.tf" name="[aws-ecr-enable-image-scans][HIGH] - Image scanning is not enabled." time="0">
+		<failure message="Image scanning is not enabled." type="">modules/ecr/main.tf:6&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/ecr/enable-image-scans/</failure>
+	</testcase>
+	<testcase classname="modules/ecr/main.tf" name="[aws-ecr-enforce-immutable-repository][HIGH] - Repository tags are mutable." time="0">
+		<failure message="Repository tags are mutable." type="">modules/ecr/main.tf:3&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/ecr/enforce-immutable-repository/</failure>
+	</testcase>
+	<testcase classname="modules/ecr/main.tf" name="[aws-ecr-repository-customer-key][LOW] - Repository is not encrypted using KMS." time="0">
+		<failure message="Repository is not encrypted using KMS." type="">modules/ecr/main.tf:1-8&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/ecr/repository-customer-key/</failure>
+	</testcase>
+	<testcase classname="role.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;ecr:BatchCheckLayerAvailability&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;ecr:BatchCheckLayerAvailability&#39; on wildcarded resource &#39;*&#39;" type="">role.tf:59-61&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="role.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;*&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;*&#39; on wildcarded resource &#39;*&#39;" type="">role.tf:55&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="role.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses wildcarded action &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses wildcarded action &#39;*&#39;" type="">role.tf:54&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="role.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;s3:Get*&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;s3:Get*&#39; on wildcarded resource &#39;*&#39;" type="">role.tf:50&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="role.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses wildcarded action &#39;s3:Get*&#39;" time="0">
+		<failure message="IAM policy document uses wildcarded action &#39;s3:Get*&#39;" type="">role.tf:46-49&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="role.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses wildcarded action &#39;s3:Get*&#39;" time="0">
+		<failure message="IAM policy document uses wildcarded action &#39;s3:Get*&#39;" type="">role.tf:46-49&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;elasticloadbalancing:AddListenerCertificates&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;elasticloadbalancing:AddListenerCertificates&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:96&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;ec2:AuthorizeSecurityGroupIngress&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;ec2:AuthorizeSecurityGroupIngress&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:57&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;acm:DescribeCertificate&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;acm:DescribeCertificate&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:33&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;wafv2:GetWebACL&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;wafv2:GetWebACL&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:147&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;waf:GetWebACL&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;waf:GetWebACL&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:137&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;waf-regional:GetWebACLForResource&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;waf-regional:GetWebACLForResource&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:122&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;cognito-idp:DescribeUserPoolClient&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;cognito-idp:DescribeUserPoolClient&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:112&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="ingress.tf" name="[aws-iam-no-policy-wildcards][HIGH] - IAM policy document uses sensitive action &#39;iam:CreateServiceLinkedRole&#39; on wildcarded resource &#39;*&#39;" time="0">
+		<failure message="IAM policy document uses sensitive action &#39;iam:CreateServiceLinkedRole&#39; on wildcarded resource &#39;*&#39;" type="">ingress.tf:105&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/iam/no-policy-wildcards/</failure>
+	</testcase>
+	<testcase classname="modules/security-group/main.tf" name="[aws-vpc-add-description-to-security-group-rule][LOW] - Security group rule does not have a description." time="0">
+		<failure message="Security group rule does not have a description." type="">modules/security-group/main.tf:18-23&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/vpc/add-description-to-security-group-rule/</failure>
+	</testcase>
+	<testcase classname="modules/security-group/main.tf" name="[aws-vpc-add-description-to-security-group-rule][LOW] - Security group rule does not have a description." time="0">
+		<failure message="Security group rule does not have a description." type="">modules/security-group/main.tf:18-23&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/vpc/add-description-to-security-group-rule/</failure>
+	</testcase>
+	<testcase classname="modules/security-group/main.tf" name="[aws-vpc-no-public-egress-sgr][CRITICAL] - Security group rule allows egress to multiple public internet addresses." time="0">
+		<failure message="Security group rule allows egress to multiple public internet addresses." type="">modules/security-group/main.tf:22&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/vpc/no-public-egress-sgr/</failure>
+	</testcase>
+	<testcase classname="modules/security-group/main.tf" name="[aws-vpc-no-public-egress-sgr][CRITICAL] - Security group rule allows egress to multiple public internet addresses." time="0">
+		<failure message="Security group rule allows egress to multiple public internet addresses." type="">modules/security-group/main.tf:22&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/vpc/no-public-egress-sgr/</failure>
+	</testcase>
+	<testcase classname="modules/security-group/main.tf" name="[aws-vpc-no-public-ingress-sgr][CRITICAL] - Security group rule allows ingress from public internet." time="0">
+		<failure message="Security group rule allows ingress from public internet." type="">modules/security-group/main.tf:15&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/vpc/no-public-ingress-sgr/</failure>
+	</testcase>
+	<testcase classname="modules/security-group/main.tf" name="[aws-vpc-no-public-ingress-sgr][CRITICAL] - Security group rule allows ingress from public internet." time="0">
+		<failure message="Security group rule allows ingress from public internet." type="">modules/security-group/main.tf:15&#xA;&#xA;https://aquasecurity.github.io/tfsec/v1.18.0/checks/aws/vpc/no-public-ingress-sgr/</failure>
+	</testcase>
+</testsuite>

@@ -6,12 +6,16 @@ phases:
         - yum install -y yum-utils
         - yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
         - yum -y install terraform
+        - wget -q -O tfsec https://github.com/aquasecurity/tfsec/releases/download/v1.18.0/tfsec-linux-amd64  \
+          && chmod +x ./tfsec \
+          && mv ./tfsec /usr/local/bin/tfsec
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
       - cd talleres/02/terraform
       - terraform init
       - terraform workspace select eks || terraform workspace new eks
+      - ./tfsec --format junit --out result_tfsec.xml
   build:
     commands:
       - echo Build started on 'date'
@@ -20,3 +24,10 @@ phases:
     commands:
       - echo Build completed on `date`
       - terraform apply --auto-approve
+reports:
+  report:
+    files:
+      - 'result_tfsec.xml'
+    base-directory: 'talleres/02/terraform'
+    discard-paths: yes
+    file-format: JunitXml

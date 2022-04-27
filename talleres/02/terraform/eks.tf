@@ -193,18 +193,18 @@ resource "aws_eks_node_group" "eks_node_group" {
 }
 
 
-data "tls_certificate" "auth" {
-  count = local.environment == "eks" ? 1 : 0
-  url = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
-}
+# data "tls_certificate" "auth" {
+#   count = local.environment == "eks" ? 1 : 0
+#   url = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
+# }
 
-resource "aws_iam_openid_connect_provider" "main" { 
-  count = local.environment == "eks" ? 1 : 0
-  client_id_list  = ["sts.amazonaws.com"]
-  thumbprint_list = [data.tls_certificate.auth[0].certificates[0].sha1_fingerprint]
-  url             = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
-    depends_on = [ aws_eks_node_group.eks_node_group ]
-  lifecycle {
-    ignore_changes = [thumbprint_list]
-  }
-}
+# resource "aws_iam_openid_connect_provider" "main" { 
+#   count = local.environment == "eks" ? 1 : 0
+#   client_id_list  = ["sts.amazonaws.com"]
+#   thumbprint_list = [data.tls_certificate.auth[0].certificates[0].sha1_fingerprint]
+#   url             = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
+#     depends_on = [ aws_eks_node_group.eks_node_group ]
+#   lifecycle {
+#     ignore_changes = [thumbprint_list]
+#   }
+# }

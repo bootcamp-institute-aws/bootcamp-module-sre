@@ -3,12 +3,10 @@ version: 0.2
 phases:
   install:
      commands:
-        - yum install -y yum-utils
+        - yum install -y yum-utils wget
         - yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
         - yum -y install terraform
-        - wget -q -O tfsec https://github.com/aquasecurity/tfsec/releases/download/v1.18.0/tfsec-linux-amd64  \
-          && chmod +x ./tfsec \
-          && mv ./tfsec /usr/local/bin/tfsec
+        - wget -q -O tfsec https://github.com/aquasecurity/tfsec/releases/download/v1.18.0/tfsec-linux-amd64  && chmod +x ./tfsec && mv ./tfsec /usr/local/bin/tfsec
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...

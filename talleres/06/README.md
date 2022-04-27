@@ -266,5 +266,5 @@ kubectl get deployment metrics-server -n kube-system
 - 
 
 
-export AWS_ACCESS_KEY_ID=AKIA4Y6RPT343WYCT6EC
-export AWS_SECRET_ACCESS_KEY=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
+export AWS_ACCESS_KEY_ID=<<REEMPLZAR>>
+export AWS_SECRET_ACCESS_KEY=<<REEMPLZAR>>

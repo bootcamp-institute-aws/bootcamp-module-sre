@@ -13,10 +13,10 @@ phases:
       - cd talleres/02/terraform
       - terraform init
       - terraform workspace select eks || terraform workspace new eks
+      - tfsec --format junit --out result_tfsec.xml --no-colour || true
   build:
     commands:
       - echo Build started on 'date'
-      - tfsec --format junit --out result_tfsec.xml --no-colour || true
       - terraform plan
   post_build:
     commands:

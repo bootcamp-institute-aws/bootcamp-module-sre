@@ -13,7 +13,7 @@ phases:
       - cd talleres/02/terraform
       - terraform init
       - terraform workspace select eks || terraform workspace new eks
-      - ./tfsec --format junit --out result_tfsec.xml
+      - tfsec --format junit --out result_tfsec.xml
   build:
     commands:
       - echo Build started on 'date'
